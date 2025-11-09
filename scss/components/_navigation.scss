@@ -1,0 +1,89 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mx;
+
+.navigation {
+  width: 100%;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  &__bars {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  &__progress-bar {
+    width: 20%;
+    background-color: black;
+    height: 1px;
+    position: absolute;
+  }
+
+  &__empty-bar {
+    width: 100%;
+    background-color: #d9d9d9;
+    height: 1px;
+  }
+
+  &__title {
+    font-feature-settings: "liga" off, "clig" off;
+    font-family: "Libre Baskerville";
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 200%;
+    letter-spacing: -0.01563rem;
+
+    @include mx.media(mx.$breakpoint-mobile) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__artist {
+    color: var(--colors-black, #000);
+    font-feature-settings: "liga" off, "clig" off;
+
+    font-family: "Libre Baskerville";
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    opacity: 0.7528;
+
+    @include mx.media(mx.$breakpoint-mobile) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: vars.$spacing-300;
+  }
+
+  &__button {
+    transition: all 0.2s;
+
+    & svg {
+      height: 1rem;
+      width: auto;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      cursor: pointer;
+
+      @include mx.media(mx.$breakpoint-mobile) {
+        height: 1.5rem;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

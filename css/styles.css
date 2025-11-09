@@ -1,0 +1,632 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 2rem 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  /*  min-height: 100vh; */
+  /* line-height: 1.5; */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Libre Baskerville", serif;
+  background-color: #fff;
+  color: #000;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* removes bullets and numbers */
+}
+
+/* 2️⃣ Neutral list items */
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit; /* inherit parent text color */
+  text-decoration: none; /* remove underline */
+  background-color: transparent; /* ensure no default focus bg */
+  cursor: pointer;
+}
+
+button {
+  font: inherit; /* inherit font styles from parent */
+  color: inherit; /* inherit text color from parent */
+  background: none; /* remove default bg */
+  border: none; /* remove default border */
+  padding: 0; /* remove default padding */
+  cursor: pointer; /* show pointer cursor on hover */
+}
+
+.text-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 125%;
+  font-feature-settings: "liga" off, "clig" off;
+  text-align: left;
+}
+
+.text-subtitle {
+  color: white;
+  opacity: 0.7528;
+  font-size: 1rem;
+  font-weight: 400;
+  font-feature-settings: "liga" off, "clig" off;
+}
+
+.app {
+  gap: 24px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.body {
+  max-width: 1440px;
+}
+
+.header {
+  position: relative;
+}
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+}
+.header__logo {
+  width: 7rem;
+  height: 2rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
+}
+@media (min-width: 1024px) {
+  .header__logo {
+    width: 10rem;
+    height: 3rem;
+  }
+}
+.header__logo-link {
+  transition: all 0.2s ease-in-out;
+}
+.header__logo-link:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.header__logo-link :active {
+  transform: scale(0.95);
+}
+.header {
+  /* slide show button */
+  /* slide show button */
+}
+.header__btn--slide {
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  line-height: 125%;
+  font-size: 0.725rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #7d7d7d;
+}
+@media (min-width: 1024px) {
+  .header__btn--slide {
+    font-size: 1rem;
+  }
+}
+.header__btn--slide:hover {
+  color: black;
+}
+.header__line {
+  height: 0.0625rem;
+  background-color: #e5e5e5;
+  align-self: stretch;
+  width: 100%;
+}
+
+.gallery {
+  width: 100%;
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1px;
+    gap: 1.5rem;
+    align-items: start;
+  }
+}
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.artist__view-button {
+  background-color: #000000;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 0.75rem */
+  letter-spacing: 0.125rem;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  opacity: 0.75;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  transition: all 0.2s;
+}
+@media (min-width: 640px) {
+  .artist__view-button {
+    bottom: 1.5rem;
+    top: auto;
+  }
+}
+.artist__view-button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.artist__view-button:active {
+  transform: scale(0.95);
+}
+
+.artist__view-text {
+  display: inline-block;
+}
+
+h1 {
+  font-size: 10rem;
+}
+
+.card {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+.card:hover {
+  opacity: 0.8;
+}
+.card__img--container {
+  width: 100%;
+  display: block;
+}
+.card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* card-1 */
+}
+.card__img[data-id=starry-night] {
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-2 */
+}
+.card__img[data-id=guernica] {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-3 */
+}
+.card__img[data-id=penitent-magdalene] {
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-4 */
+}
+.card__img[data-id=the-storm-on-the-sea-of-galilee] {
+  height: 340px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-5 */
+}
+.card__img[data-id=the-great-wave-off-kanagawa] {
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-6 */
+}
+.card__img[data-id=van-gogh-self-portrait] {
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-7 */
+}
+.card__img[data-id=van-gogh-self-portrait] {
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-8 */
+}
+.card__img[data-id=the-sleeping-gypsy] {
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-9 */
+}
+.card__img[data-id=lady-with-an-ermine] {
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-10 */
+}
+.card__img[data-id=the-night-cafe] {
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-11 */
+}
+.card__img[data-id=the-basket-of-apples] {
+  height: 430px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-12 */
+}
+.card__img[data-id=the-boy-in-the-red-vest] {
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-13 */
+}
+.card__img[data-id=arnolfini-portrait] {
+  height: 20.625rem;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-14 */
+}
+.card__img[data-id=mona-lisa] {
+  height: 32.8125rem;
+  object-fit: cover;
+  object-position: center;
+}
+.card__img {
+  /* card-15 */
+}
+.card__img[data-id=the-swing] {
+  height: 21.25rem;
+  object-fit: cover;
+  object-position: center;
+}
+.card {
+  /* card content */
+}
+.card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  align-items: flex-start;
+  gap: 8px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.84) 100%);
+  width: 100%;
+  height: auto;
+}
+.card:nth-child(1) {
+  grid-row: 1/1;
+}
+
+/*
+
+card--small
+card--medium
+card--large
+ */
+.slideshow {
+  padding-inline: 1.5rem;
+}
+.slideshow__content {
+  margin-top: 2rem;
+}
+
+.artist__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  z-index: 5;
+}
+@media (min-width: 640px) {
+  .artist__image-wrapper {
+    width: 70%;
+  }
+}
+.artist__image--container {
+  position: relative;
+  display: flex;
+  z-index: 5;
+}
+.artist__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 5;
+}
+@media (min-width: 640px) {
+  .artist__image {
+    width: 475px;
+  }
+}
+.artist {
+  /* artist label the name and description */
+}
+.artist__label {
+  background-color: white;
+  width: 90%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  position: absolute;
+  bottom: -3.5rem;
+  z-index: 10;
+}
+@media (min-width: 640px) {
+  .artist__label {
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    width: 445px;
+    height: 238px;
+    padding: 56px;
+    justify-content: flex-end;
+  }
+}
+.artist__title {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}
+@media (min-width: 640px) {
+  .artist__title {
+    font-size: 3.5rem;
+    max-width: 22rem;
+  }
+}
+.artist__name {
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  color: #7d7d7d;
+}
+.artist__portrait {
+  display: block;
+  margin-top: 4rem;
+  margin-left: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: 10;
+}
+@media (min-width: 640px) {
+  .artist__portrait {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 300px;
+    margin-left: 500px;
+    margin-top: -328px;
+  }
+}
+
+.slideshow__artists {
+  position: relative;
+}
+
+/* content box */
+.content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-block: 64px;
+  margin-top: -4rem;
+  position: relative;
+}
+.content-box__description {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%; /* 1.75rem */
+  letter-spacing: -0.01563rem;
+  color: #7d7d7d;
+  font-feature-settings: "liga" off, "clig" off;
+}
+@media (min-width: 640px) {
+  .content-box__description {
+    padding: 0 9.75rem;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+.content-box__year {
+  font-size: 6.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  color: #f3f3f3;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+}
+@media (min-width: 640px) {
+  .content-box__year {
+    font-size: 12.5rem;
+    left: 0;
+  }
+}
+.content-box__source {
+  font-size: 0.5625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 0.70313rem */
+  letter-spacing: 0.125rem;
+  color: #7d7d7d;
+  text-transform: uppercase;
+}
+.content-box__source:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: black;
+}
+
+.navigation {
+  width: 100%;
+}
+.navigation__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1.5rem;
+  padding-top: 0.5rem;
+}
+.navigation__bars {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.navigation__progress-bar {
+  width: 20%;
+  background-color: black;
+  height: 1px;
+  position: absolute;
+}
+.navigation__empty-bar {
+  width: 100%;
+  background-color: #d9d9d9;
+  height: 1px;
+}
+.navigation__title {
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Libre Baskerville";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%;
+  letter-spacing: -0.01563rem;
+}
+@media (min-width: 640px) {
+  .navigation__title {
+    font-size: 1.25rem;
+  }
+}
+.navigation__artist {
+  color: var(--colors-black, #000);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Libre Baskerville";
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  opacity: 0.7528;
+}
+@media (min-width: 640px) {
+  .navigation__artist {
+    font-size: 0.875rem;
+  }
+}
+.navigation__buttons {
+  display: flex;
+  gap: 24px;
+}
+.navigation__button {
+  transition: all 0.2s;
+}
+.navigation__button svg {
+  height: 1rem;
+  width: auto;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+@media (min-width: 640px) {
+  .navigation__button svg {
+    height: 1.5rem;
+  }
+}
+.navigation__button svg:hover {
+  opacity: 0.5;
+}

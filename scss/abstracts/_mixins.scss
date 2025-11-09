@@ -1,0 +1,19 @@
+$breakpoints: (
+  mobile: 640px,
+  tablet: 768px,
+  desktop: 1024px,
+  desktop-lg: 1440px,
+);
+
+$breakpoint-mobile: 640px;
+$breakpoint-tablet-sm: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-lg: 1440px;
+
+@mixin media($breakpoint) {
+  // Use a min-width media query so the mixin applies at and above the
+  // supplied breakpoint (useful for responsive "desktop-up" rules).
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

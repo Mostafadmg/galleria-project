@@ -1,0 +1,63 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mx;
+
+.header {
+  position: relative;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+  }
+
+  &__logo {
+    width: 7rem;
+    height: 2rem;
+    flex-shrink: 0;
+    transition: all 0.2s ease-in-out;
+    @include mx.media(mx.$breakpoint-desktop) {
+      width: 10rem;
+      height: 3rem;
+    }
+
+    &-link {
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+
+      & :active {
+        transform: scale(0.95);
+      }
+    }
+  }
+  /* slide show button */
+  /* slide show button */
+
+  &__btn--slide {
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    line-height: 125%;
+    font-size: 0.725rem;
+    font-style: normal;
+    font-weight: 700;
+    color: vars.$grey-400;
+
+    @include mx.media(mx.$breakpoint-desktop) {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &__line {
+    height: 0.0625rem;
+    background-color: #e5e5e5;
+    align-self: stretch;
+    width: 100%;
+  }
+}

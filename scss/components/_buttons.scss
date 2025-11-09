@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mx;
+
+.artist__view-button {
+  background-color: vars.$black;
+  color: vars.$white;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 0.75rem */
+  letter-spacing: 0.125rem;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  opacity: 0.75;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  transition: all 0.2s;
+
+  @include mx.media(mx.$breakpoint-mobile) {
+    bottom: 1.5rem;
+
+    top: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.artist__view-text {
+  display: inline-block;
+}

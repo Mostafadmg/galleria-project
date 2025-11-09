@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Galleria Slide Show</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header__content">
+          <a href="#" class="header__logo-link"
+            ><img src="./assets/shared/logo.svg" alt="Galleria Logo" class="header__logo"
+          /></a>
+          <a href="#" class="header__btn--slide">start slideshow</a>
+        </div>
+        <div class="header__line"></div>
+      </header>
+      <!-- Main -->
+      <main class="main">
+        <div class="gallery">
+          <!-- card 1 -->
+          <!-- Artwork: Starry Night — Vincent van Gough -->
+          <button class="card card__btn card--small">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/starry-night/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="starry-night"
+                data-title="Starry Night"
+                data-artist="Vincent van Gough"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Starry Night</h3>
+              <p class="card__description text-subtitle">Vincent van Gough</p>
+            </div>
+          </button>
+
+          <!-- card 2 -->
+          <!-- Artwork: Girl with a Pearl Earring — Johannes Vermeer -->
+          <button class="card card__btn card--medium">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/girl-with-pearl-earring/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="girl-with-a-pearl-earring"
+                data-title="Girl with a Pearl Earring"
+                data-artist="Johannes Vermeer"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Girl with a Pearl <br />Earring</h3>
+              <p class="card__description text-subtitle">Johannes Vermeer</p>
+            </div>
+          </button>
+
+          <!-- card 3 -->
+          <!-- Artwork: Guernica — Pablo Picasso -->
+          <button class="card card__btn card--small">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/guernica/gallery.jpg"
+                alt=""
+                class="card__img small-img"
+                data-id="guernica"
+                data-title="Guernica"
+                data-artist="Pablo Picasso"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Guernica</h3>
+              <p class="card__description text-subtitle">Pablo Picasso</p>
+            </div>
+          </button>
+
+          <!-- card 4 -->
+          <!-- Artwork: Penitent Magdalene — Artemisia Gentileschi -->
+          <button class="card card__btn card--medium">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/penitent-magdalene/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="penitent-magdalene"
+                data-title="Penitent Magdalene"
+                data-artist="Artemisia Gentileschi"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Penitent <br />Magdalene</h3>
+              <p class="card__description text-subtitle">Artemisia Gentileschi</p>
+            </div>
+          </button>
+
+          <!-- card 5 -->
+          <!-- Artwork: The Storm on the Sea of Galilee — Rembrandt -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-storm-on-the-sea-of-galilee/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-storm-on-the-sea-of-galilee"
+                data-title="The Storm on the Sea of Galilee"
+                data-artist="Rembrandt"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">
+                The Storm on the<br />
+                Sea of Galilee
+              </h3>
+              <p class="card__description text-subtitle">Rembrandt</p>
+            </div>
+          </button>
+
+          <!-- card 6 -->
+          <!-- Artwork: The Great Wave off Kanagawa — Hokusai -->
+          <button class="card card__btn card--medium">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-great-wave-off-kanagawa/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-great-wave-off-kanagawa"
+                data-title="The Great Wave off Kanagawa"
+                data-artist="Hokusai"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">
+                The Great Wave off <br />
+                Kanagawa
+              </h3>
+              <p class="card__description text-subtitle">Hokusai</p>
+            </div>
+          </button>
+
+          <!-- card 7 -->
+          <!-- Artwork: Van Gogh Self-Portrait — Vincent van Gough -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/van-gogh-self-portrait/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="van-gogh-self-portrait"
+                data-title="Van Gogh Self-Portrait"
+                data-artist="Vincent van Gough"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Van Gogh Self- <br />Portrait</h3>
+              <p class="card__description text-subtitle">Vincent van Gough</p>
+            </div>
+          </button>
+
+          <!-- card 8 -->
+          <!-- Artwork: The Sleeping Gypsy — Henri Rousseau -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-sleeping-gypsy/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-sleeping-gypsy"
+                data-title="The Sleeping Gypsy"
+                data-artist="Henri Rousseau"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">The Sleeping <br />Gypsy</h3>
+              <p class="card__description text-subtitle">Henri Rousseau</p>
+            </div>
+          </button>
+
+          <!-- card 9 -->
+          <!-- Artwork: Lady with an Ermine — Leonardo da Vinci -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/lady-with-an-ermine/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="lady-with-an-ermine"
+                data-title="Lady with an Ermine"
+                data-artist="Leonardo da Vinci"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Lady with an <br />Ermine</h3>
+              <p class="card__description text-subtitle">Leonardo da Vinci</p>
+            </div>
+          </button>
+
+          <!-- card 10 -->
+          <!-- Artwork: The Night Café — Vincent van Gough -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-night-cafe/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-night-cafe"
+                data-title="The Night Café"
+                data-artist="Vincent van Gough"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">The Night Café</h3>
+              <p class="card__description text-subtitle">Vincent van Gough</p>
+            </div>
+          </button>
+
+          <!-- card 11 -->
+          <!-- Artwork: The Basket of Apples — Paul Cézanne -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-basket-of-apples/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-basket-of-apples"
+                data-title="The Basket of Apples"
+                data-artist="Paul Cézanne"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">The Basket of <br />Apples</h3>
+              <p class="card__description text-subtitle">Paul Cézanne</p>
+            </div>
+          </button>
+
+          <!-- card 12 -->
+          <!-- Artwork: The Boy in the Red Vest — Edward Hopper -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-boy-in-the-red-vest/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-boy-in-the-red-vest"
+                data-title="The Boy in the Red Vest"
+                data-artist="Edward Hopper"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">The Boy in the <br />Red Vest</h3>
+              <p class="card__description text-subtitle">Edward Hopper</p>
+            </div>
+          </button>
+
+          <!-- card 13 -->
+          <!-- Artwork: Arnolfini Portrait — Jan van Eyck -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/arnolfini-portrait/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="arnolfini-portrait"
+                data-title="Arnolfini Portrait"
+                data-artist="Jan van Eyck"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Arnolfini Portrait</h3>
+              <p class="card__description text-subtitle">Jan van Eyck</p>
+            </div>
+          </button>
+
+          <!-- card 14 -->
+          <!-- Artwork: Mona Lisa — Leonardo da Vinci -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/mona-lisa/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="mona-lisa"
+                data-title="Mona Lisa"
+                data-artist="Leonardo da Vinci"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">Mona Lisa</h3>
+              <p class="card__description text-subtitle">Leonardo da Vinci</p>
+            </div>
+          </button>
+
+          <!-- card 15 -->
+          <!-- Artwork: The Swing — Jean-Honoré Fragonard -->
+          <button class="card card__btn">
+            <!-- card image -->
+            <div class="card__img--container">
+              <img
+                src="./assets/the-swing/gallery.jpg"
+                alt=""
+                class="card__img"
+                data-id="the-swing"
+                data-title="The Swing"
+                data-artist="Jean-Honoré Fragonard"
+              />
+            </div>
+            <!-- card content -->
+            <div class="card__content">
+              <h3 class="card__title text-title">The Swing</h3>
+              <p class="card__description text-subtitle">Jean-Honoré Fragonard</p>
+            </div>
+          </button>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="js/grid.js"></script>
+</html>

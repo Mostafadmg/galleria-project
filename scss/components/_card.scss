@@ -1,0 +1,160 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mx;
+.card {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  transition: all 0.2s ease-in-out;
+
+  @include mx.media(mx.$breakpoint-tablet-sm) {
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__img--container {
+    width: 100%;
+    display: block;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    /* card-1 */
+    &[data-id="starry-night"] {
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-2 */
+    &[data-id="guernica"] {
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-3 */
+    &[data-id="penitent-magdalene"] {
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-4 */
+    &[data-id="the-storm-on-the-sea-of-galilee"] {
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-5 */
+    &[data-id="the-great-wave-off-kanagawa"] {
+      height: 280px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-6 */
+    &[data-id="van-gogh-self-portrait"] {
+      height: 500px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-7 */
+    &[data-id="van-gogh-self-portrait"] {
+      height: 500px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-8 */
+    &[data-id="the-sleeping-gypsy"] {
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-9 */
+    &[data-id="lady-with-an-ermine"] {
+      height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-10 */
+    &[data-id="the-night-cafe"] {
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-11 */
+    &[data-id="the-basket-of-apples"] {
+      height: 430px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-12 */
+    &[data-id="the-boy-in-the-red-vest"] {
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-13 */
+    &[data-id="arnolfini-portrait"] {
+      height: 20.625rem;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-14 */
+    &[data-id="mona-lisa"] {
+      height: 32.8125rem;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* card-15 */
+    &[data-id="the-swing"] {
+      height: 21.25rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  /* card content */
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: vars.$spacing-400;
+    align-items: flex-start;
+    gap: vars.$spacing-100;
+    background: vars.$gradient-1;
+    width: 100%;
+    height: auto;
+  }
+
+  &:nth-child(1) {
+    grid-row: 1/1;
+  }
+}
+/*
+
+card--small
+card--medium
+card--large
+ */

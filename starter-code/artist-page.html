@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Galleria Slide Show</title>
+  </head>
+  <body>
+    <div class="app-art">
+      <!-- ========== HEADER (unchanged) ========== -->
+      <header class="header">
+        <div class="header__content">
+          <a href="#" class="header__logo-link">
+            <img
+              src="../assets/shared/logo.svg"
+              alt="Galleria Logo"
+              class="header__logo"
+            />
+          </a>
+          <a href="#" class="header__btn--slide">Return to gallery</a>
+        </div>
+        <div class="header__line"></div>
+      </header>
+
+      <!-- ========== SLIDESHOW SECTION ========== -->
+      <section class="slideshow">
+        <!-- ARTIST SECTION -->
+        <div class="slideshow__artist">
+          <div class="artist__image-wrapper">
+            <picture class="artist__image-container">
+              <source
+                media="(min-width: 640px)"
+                srcset="../assets/starry-night/hero-large.jpg"
+              />
+              <img
+                src="../assets/starry-night/hero-small.jpg"
+                alt="Starry Night by Vincent van Gogh"
+                class="artist__image"
+              />
+            </picture>
+
+            <button class="artist__view-button">
+              <img
+                src="../assets/shared/icon-view-image.svg"
+                alt="View full image icon"
+                class="artist__view-icon"
+              />
+              <span class="artist__view-text">View Image</span>
+            </button>
+
+            <div class="artist__label">
+              <h2 class="artist__title">Starry Night</h2>
+              <p class="artist__name">Vincent van Gogh</p>
+            </div>
+          </div>
+
+          <img
+            src="../assets/starry-night/artist.jpg"
+            alt="Vincent van Gogh Portrait"
+            class="artist__portrait"
+          />
+        </div>
+
+        <!-- CONTENT SECTION -->
+        <div class="slideshow__content">
+          <div class="content-box">
+            <div class="content-box__text">
+              <p class="content-box__description">
+                Although The Starry Night was painted during the day in Van Gogh's
+                ground-floor studio, it would be inaccurate to state that the picture was
+                painted from memory. The view has been identified as the one from his
+                bedroom window, facing east, a view which Van Gogh painted variations of
+                no fewer than twenty-one times, including The Starry Night. "Through the
+                iron-barred window," he wrote to his brother, Theo, around 23 May 1889, "I
+                can see an enclosed square of wheat ... above which, in the morning, I
+                watch the sun rise in all its glory."
+              </p>
+              <p class="content-box__year">1889</p>
+            </div>
+            <a href="#" class="content-box__source">Go to source</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NAVIGATION ========== -->
+      <nav class="navigation">
+        <div class="navigation__bars">
+          <div class="navigation__progress-bar"></div>
+          <div class="navigation__empty-bar"></div>
+        </div>
+
+        <div class="navigation__wrapper">
+          <div class="navigation__info">
+            <h2 class="navigation__title">Starry Night</h2>
+            <p class="navigation__artist">Vincent van Gogh</p>
+          </div>
+
+          <div class="navigation__buttons">
+            <button class="navigation__button navigation__button--prev">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="24"
+                viewBox="0 0 26 24"
+                fill="none"
+              >
+                <path
+                  d="M3.6275 12.1121L24.1656 22.3817V1.84261L3.6275 12.1121Z"
+                  stroke="black"
+                  stroke-width="2"
+                />
+                <rect
+                  x="-0.371478"
+                  y="0.371478"
+                  width="0.742956"
+                  height="23.0316"
+                  transform="matrix(-1 0 0 1 0.742939 0)"
+                  fill="#D8D8D8"
+                  stroke="black"
+                  stroke-width="0.742956"
+                />
+              </svg>
+            </button>
+            <button class="navigation__button navigation__button--next">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="24"
+                viewBox="0 0 26 24"
+                fill="none"
+              >
+                <path
+                  d="M21.5381 12.1121L1 22.3817V1.84261L21.5381 12.1121Z"
+                  stroke="black"
+                  stroke-width="2"
+                />
+                <rect
+                  x="24.0512"
+                  y="0.371478"
+                  width="0.742956"
+                  height="23.0316"
+                  fill="#D8D8D8"
+                  stroke="black"
+                  stroke-width="0.742956"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
