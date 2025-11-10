@@ -775,4 +775,13 @@ card--large
   opacity: 0.5;
 }
 
+.navigation__button--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+.navigation__button--disabled svg {
+  opacity: 0.4;
+}
+
 /*# sourceMappingURL=styles.css.map */

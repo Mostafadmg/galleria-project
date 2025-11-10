@@ -98,3 +98,13 @@
     }
   }
 }
+
+.navigation__button--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+
+  & svg {
+    opacity: 0.4;
+  }
+}
