@@ -18,20 +18,20 @@
       <!-- ========== HEADER (unchanged) ========== -->
       <header class="header">
         <div class="header__content">
-          <a href="#" class="header__logo-link">
+          <a href="../index.html" class="header__logo-link">
             <img
               src="../assets/shared/logo.svg"
               alt="Galleria Logo"
               class="header__logo"
             />
           </a>
-          <a href="#" class="header__btn--slide">Return to gallery</a>
+          <a href="../index.html" class="header__btn--slide">Return to gallery</a>
         </div>
         <div class="header__line"></div>
       </header>
 
       <!-- ========== SLIDESHOW SECTION ========== -->
-      <section class="slideshow">
+      <section class="slideshow fade-transition show">
         <!-- ARTIST SECTION -->
         <div class="slideshow__artist">
           <div class="artist__image-wrapper">
@@ -156,8 +156,26 @@
           </div>
         </div>
       </nav>
+
+      <!-- ========== IMAGE MODAL (HIDDEN BY DEFAULT) ========== -->
+      <div class="modal hidden">
+        <div class="modal__content">
+          <button class="modal__close">CLOSE</button>
+          <picture class="modal__picture">
+            <source
+              media="(min-width: 640px)"
+              srcset="../assets/starry-night/hero-large.jpg"
+            />
+            <img
+              src="../assets/starry-night/hero-small.jpg"
+              alt="Full artwork view"
+              class="modal__image"
+            />
+          </picture>
+        </div>
+      </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="../js/artistScript.js"></script>
   </body>
 </html>

@@ -3,9 +3,25 @@
 
 .slideshow {
   padding-inline: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 8rem; /* Add space for fixed navigation at bottom */
+
+  @include mx.media(mx.$breakpoint-desktop-lg) {
+    padding-top: 9rem;
+  }
+
+  @include mx.media(mx.$breakpoint-desktop-lg) {
+    display: flex;
+  }
 
   &__content {
     margin-top: 2rem;
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      margin-top: 5rem;
+
+      margin-left: -2rem;
+    }
   }
 }
 
@@ -19,6 +35,13 @@
 
     @include mx.media(mx.$breakpoint-mobile) {
       width: 70%;
+      max-width: 722px;
+    }
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      max-width: 1440px;
+      width: 100%;
+      padding-right: 20rem;
     }
   }
 
@@ -36,6 +59,14 @@
 
     @include mx.media(mx.$breakpoint-mobile) {
       width: 475px;
+      height: auto;
+    }
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      width: 475px;
+      height: 560px;
+      object-fit: cover; // Maintain aspect ratio and fill the box
+      object-position: center; // Center the image
     }
   }
 
@@ -48,6 +79,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    align-self: flex;
     gap: vars.$spacing-200;
     position: absolute;
     bottom: -3.5rem;
@@ -56,12 +88,11 @@
     @include mx.media(mx.$breakpoint-mobile) {
       top: 0;
       left: 50%;
-      bottom: 0;
-      width: 445px;
-      height: 238px;
-
-      padding: vars.$spacing-700;
-      justify-content: flex-end;
+      bottom: auto; /* Remove bottom positioning on desktop */
+      width: 500px;
+      min-height: 238px;
+      padding: vars.$spacing-500;
+      justify-content: flex-start; /* Align content to top */
     }
   }
 
@@ -73,7 +104,7 @@
 
     @include mx.media(mx.$breakpoint-mobile) {
       font-size: 3.5rem;
-      max-width: 22rem;
+      max-width: 50rem;
     }
   }
 
@@ -99,6 +130,11 @@
       margin-bottom: 300px;
       margin-left: 500px;
       margin-top: -328px;
+    }
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      margin-top: -70px;
+      margin-bottom: 70px;
     }
   }
 }
@@ -126,11 +162,16 @@
     color: #7d7d7d;
     font-feature-settings: "liga" off, "clig" off;
 
-    @include mx.media(mx.$breakpoint-mobile) {
+    @include mx.media(mx.$breakpoint-tablet-sm) {
       padding: 0 9.75rem;
       text-wrap: pretty; // smooth, human-like wrapping
       overflow-wrap: break-word; // prevent overflow issues
       hyphens: auto;
+    }
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      padding-left: 9.75rem;
+      padding-right: 5rem;
     }
   }
 
@@ -145,9 +186,15 @@
     top: 0;
     right: 0;
 
-    @include mx.media(mx.$breakpoint-mobile) {
+    @include mx.media(mx.$breakpoint-tablet-sm) {
       font-size: 12.5rem;
       left: 0;
+    }
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      left: auto;
+      right: -1rem;
+      top: -2rem;
     }
   }
 
@@ -160,10 +207,89 @@
     color: #7d7d7d;
     text-transform: uppercase;
 
+    @include mx.media(mx.$breakpoint-tablet-sm) {
+      padding: 0 9.75rem;
+    }
+
+    @include mx.media(mx.$breakpoint-desktop-lg) {
+      padding-left: 9.75rem;
+      padding-right: 7.5rem;
+    }
+
     &:hover {
       cursor: pointer;
       text-decoration: underline;
       color: black;
     }
   }
+}
+
+.modal {
+  position: fixed;
+  inset: 0; // top:0, right:0, bottom:0, left:0 shorthand
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  &__picture {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  @media (min-width: 640px) {
+    &__close {
+      top: -3rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.fade-transition {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-transition.show {
+  opacity: 1;
 }

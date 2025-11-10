@@ -1,43 +1,21 @@
-function resizeGridItems() {
-  const gallery = document.querySelector(".gallery");
-  if (!gallery) return;
+let artistImage = document.querySelector(".artist__image");
+let artistTitle = document.querySelector(".artist__title");
+let artistName = document.querySelector(".artist__name");
+let artistPortrait = document.querySelector(".artist__portrait");
+let navigationTtitle = document.querySelector(".navigation__title");
+let navigationArtist = document.querySelectorAll(".navigation__artist");
+let description = document.querySelector(".content-box__description");
+let source = document.querySelector(".content-box__source");
+const nextBtn = document.querySelector(".navigation__btn--next");
+const prevBtn = document.querySelector(".navigation__btn--prev");
+let currentIndex = 0;
 
-  const rowHeightStr = getComputedStyle(gallery).getPropertyValue("grid-auto-rows");
-  const rowGapStr =
-    getComputedStyle(gallery).getPropertyValue("gap") ||
-    getComputedStyle(gallery).getPropertyValue("grid-row-gap");
-  const rowHeight = parseFloat(rowHeightStr) || 8;
-  const rowGap = parseFloat(rowGapStr) || 24;
+const cards = document.querySelectorAll(".card");
 
-  const items = gallery.querySelectorAll(".card");
-  items.forEach((item) => {
-    item.style.gridRowEnd = null;
-    const itemHeight = item.getBoundingClientRect().height;
-    const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
-    item.style.gridRowEnd = "span " + rowSpan;
-  });
-}
-
-/* need all content loaded before measuring height and gap for grid calculation so "load" is necessary, meaning function should only run after loading. */
-window.addEventListener("load", resizeGridItems);
-
-// Use requestAnimationFrame for smoother resize handling
-let resizeTimeout;
-window.addEventListener("resize", () => {
-  if (resizeTimeout) {
-    cancelAnimationFrame(resizeTimeout);
-  }
-  resizeTimeout = requestAnimationFrame(() => {
-    resizeGridItems();
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const img = card.querySelector(".card__img");
+    const artWorkId = img.getAttribute("data-id");
+    window.location.href = `starter-code/artist-page.html?artwork=${artWorkId}`;
   });
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const imgs = document.querySelectorAll(".card__img");
-  imgs.forEach((img) => {
-    if (img.complete) return;
-    img.addEventListener("load", () => resizeGridItems());
-  });
-});
-
-window.resizeGridItems = resizeGridItems;
